@@ -4,9 +4,12 @@ from django.db import models
 
 
 class Students(models.Model):
-    name = models.CharField(max_length=100)
-    roll = models.IntegerField()
-    city = models.CharField(max_length=100)
+    student_number = models.PositiveBigIntegerField()
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50, null=True)
+    field_of_study = models.CharField(max_length=50)
+    gpa = models.FloatField()
 
     def __str__(self):
-        return self.name
+        return f"{self.first_name} {self.last_name}"
