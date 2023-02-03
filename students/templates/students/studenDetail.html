@@ -1,0 +1,39 @@
+{% extends 'students/index.html' %} 
+{% block content %}
+
+<div class="card text-white bg-light m-5">
+  <div class="card-body">
+    <h4 class="card-title text-center">Student Info</h4>
+    {% if student %}
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="bg-white text-black">
+          <tr>
+            <th scope="col">Studen Number</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Field of Study</th>
+            <th scope="col">GPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ student.student_number }}</td>
+            <td>{{ student.first_name }}</td>
+            <td>{{ student.last_name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.field_of_study }}</td>
+            <td>{{ student.gpa }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {%else%}
+  <h3 class="text-center mt-4">Student not found</h3>
+  {%endif%}
+  </div>
+</div>
+
+{% endblock %}
